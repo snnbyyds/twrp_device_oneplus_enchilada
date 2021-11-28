@@ -1,3 +1,4 @@
 ro.display.series=OnePlus 6
 ro.product.board=sdm845
 ro.board.platform=sdm845
+persist.sys.binary_xml=false
