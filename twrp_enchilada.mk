@@ -22,19 +22,18 @@ DEVICE_PATH := device/oneplus/enchilada
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Inherit some common Omni stuff.
+# Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/oneplus/enchilada/device.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := enchilada
-PRODUCT_NAME := omni_enchilada
+PRODUCT_NAME := twrp_enchilada
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := OnePlus A6000
 PRODUCT_MANUFACTURER := OnePlus
@@ -44,7 +43,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_PRODUCT=OnePlus6 \
     TARGET_DEVICE=OnePlus6 \
 	PRODUCT_DEVICE=OnePlus6
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
