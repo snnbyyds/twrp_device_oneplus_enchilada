@@ -1,2 +1,4 @@
+ro.display.series=OnePlus 6
 ro.product.board=sdm845
 ro.board.platform=sdm845
+ro.crypto.volume.filenames_mode=aes-256-cts
