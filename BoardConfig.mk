@@ -139,8 +139,6 @@ TW_USE_LEDS_HAPTICS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := true
@@ -157,12 +155,3 @@ PRODUCT_ENFORCE_VINTF_MANIFEST := true
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
 BOARD_BUILD_DISABLED_VBMETAIMAGE := true
-
-#
-# For local builds only
-#
-# TWRP zip installer
-ifneq ($(wildcard bootable/recovery/installer/.),)
-    USE_RECOVERY_INSTALLER := true
-    RECOVERY_INSTALLER_PATH := bootable/recovery/installer
-endif
